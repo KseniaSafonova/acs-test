@@ -284,19 +284,22 @@ let menuCategories = menu.serviceTimes[0].menuCategories;
 let category = document.querySelector('.category');
 let category__item = document.querySelector('.category__item');
 
+
 menuCategories.map((item) => {
     category.innerHTML += `
     <h2 class="">${item.catName}</h2>`
 
     item.menuItems.map((item) => {
         category.innerHTML += `
-            <div class="item__title">${item.itemName}</div> 
+            <div class="item__title">${item.itemName}</div>
             <div class="item__description">${item.itemDescription}</div>
             <div class="item__weight">Вес: ${item.itemWeight}</div>
             <div class="item__price">Цена: ${item.itemPrice}</div>`
     })
-
 })
+
+
+
 
 
 
