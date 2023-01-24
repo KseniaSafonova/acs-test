@@ -281,31 +281,36 @@ let menu = {
 document.querySelector('.header').innerHTML = `${menu.menuGroup}`
 
 let menuCategories = menu.serviceTimes[0].menuCategories;
-let title = document.querySelector('.title');
-let item = document.querySelector('.item');
+let category = document.querySelector('.category');
+let category__item = document.querySelector('.category__item');
 
-// menuCategories.map((category) => {
-//     console.log(category)
-//     title.innerHTML += `
-//     <div>${category.catName}</div>
-//     `
-// })
+menuCategories.map((item) => {
+    category.innerHTML += `
+    <h2 class="">${item.catName}</h2>`
 
-for (let i = 0; i < menuCategories.length; i++) {
+    item.menuItems.map((item) => {
+        category.innerHTML += `
+            <div class="item__title">${item.itemName}</div> 
+            <div class="item__description">${item.itemDescription}</div>
+            <div class="item__weight">Вес: ${item.itemWeight}</div>
+            <div class="item__price">Цена: ${item.itemPrice}</div>`
+    })
 
-    title.innerHTML += `
-    <div>${menuCategories[i].catName}</div>`
-    for (let j = 0; j < menuCategories[i].menuItems.length; j++) {
-
-        item.innerHTML += `
-            <div> ${menuCategories[i].menuItems[j].itemName}
-        </div> `
+})
 
 
-    }
 
 
-}
+
+
+
+
+
+
+
+
+
+
 
 
 
