@@ -281,22 +281,36 @@ let menu = {
 document.querySelector('.header').innerHTML = `${menu.menuGroup}`
 
 let menuCategories = menu.serviceTimes[0].menuCategories;
-let category = document.querySelector('.category');
-let category__item = document.querySelector('.category__item');
+let block = document.querySelector('.block');
+let block2 = document.querySelector('.block2');
 
+// menuCategories.map((item) => {
+//     category.innerHTML += `
+//     <h2 class="">${item.catName}</h2>`
 
-menuCategories.map((item) => {
-    category.innerHTML += `
-    <h2 class="">${item.catName}</h2>`
+//     item.menuItems.map((item) => {
+//         category.innerHTML += `
+//             <div class="item__title">${item.itemName}</div>
+//             <div class="item__description">${item.itemDescription}</div>
+//             <div class="item__weight">Вес: ${item.itemWeight}</div>
+//             <div class="item__price">Цена: ${item.itemPrice}</div>`
+//     })
+// })
 
-    item.menuItems.map((item) => {
-        category.innerHTML += `
-            <div class="item__title">${item.itemName}</div>
-            <div class="item__description">${item.itemDescription}</div>
-            <div class="item__weight">Вес: ${item.itemWeight}</div>
-            <div class="item__price">Цена: ${item.itemPrice}</div>`
+document.addEventListener("DOMContentLoaded", function () {
+    let arrCategories = [];
+    let arrMenu = [];
+    menuCategories.map((item) => {
+        arrCategories.push(item.catName);
+
+        arrMenu.push(item.menuItems)
     })
+    console.log(arrCategories)
+    console.log(arrMenu)
+
+    // элементы массивов соответствую друг другу 
 })
+
 
 
 
