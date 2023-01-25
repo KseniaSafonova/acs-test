@@ -1,8 +1,16 @@
-.block {}
+.block {
+    border: 2px solid green;
+}
 
-.catName {
-    border: 1px solid red;
-    font-weight: bold;
+.block2 {
+    border: 2px solid green;
+    width: 300px;
+}
+
+.body {
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-around;
 }
 
 // .content {

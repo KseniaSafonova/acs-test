@@ -1,4 +1,8 @@
-.catName {
-  border: 1px solid red;
-  font-weight: bold;
+.block {
+  border: 2px solid green;
+}
+
+.block2 {
+  border: 2px solid green;
+  width: 300px;
 }/*# sourceMappingURL=index.css.map */

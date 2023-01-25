@@ -282,34 +282,75 @@ document.querySelector('.header').innerHTML = `${menu.menuGroup}`
 
 let menuCategories = menu.serviceTimes[0].menuCategories;
 let block = document.querySelector('.block');
-let block2 = document.querySelector('.block2');
+let body = document.querySelector('.body');
 
-// menuCategories.map((item) => {
-//     category.innerHTML += `
-//     <h2 class="">${item.catName}</h2>`
+menuCategories.map((elem) => {
+    // body.innerHTML += `
+    // <h2 class="">${item.catName}</h2>`
 
-//     item.menuItems.map((item) => {
-//         category.innerHTML += `
-//             <div class="item__title">${item.itemName}</div>
-//             <div class="item__description">${item.itemDescription}</div>
-//             <div class="item__weight">Вес: ${item.itemWeight}</div>
-//             <div class="item__price">Цена: ${item.itemPrice}</div>`
+    elem.menuItems.map((item) => {
+        block.innerHTML += `
+        <h2 class="">${elem.catName}</h2>`
+        block.innerHTML += `
+        <div class="block2">
+            <div class="item__title">${item.itemName}</div>
+            <div class="item__description">${item.itemDescription}</div>
+            <div class="item__weight">Вес: ${item.itemWeight}</div>
+            <div class="item__price">Цена: ${item.itemPrice}</div>
+            </div>`
+    })
+})
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     let arrCategories = [];
+//     let arrMenu = [];
+//     menuCategories.map((item) => {
+//         arrCategories.push(item.catName);
+//         arrMenu.push(item.menuItems)
+//     })
+
+//     for (i = 0; i < arrCategories.length; i++) {
+//         block.innerHTML += `
+//         <div>${arrCategories[i]}</div>`
+//         // console.log(arrCategories[i])
+//         // console.log(arrMenu[i])
+//         arrMenu[i].map((item) => {
+//             block.innerHTML += `
+//             <ul class="ul">
+//             <li class="item__title">${item.itemName}</li>
+//             <li class="item__description">${item.itemDescription}</li>
+//             <li class="item__weight">Вес: ${item.itemWeight}</li>
+//             <li class="item__price">Цена: ${item.itemPrice}</li>
+//              </ul>
+// `
+//         })
+//     }
+// })
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+
+//     menuCategories.map((item) => {
+//         item.menuItems.map((element) => {
+//             let object = {
+//                 catName: item.catName,
+//                 itemName: element.itemName,
+//                 itemDescription: element.itemDescription,
+//                 itemWeight: element.itemWeight,
+//                 itemPrice: element.itemPrice
+//             }
+//             console.log(object)
+//         })
 //     })
 // })
 
-document.addEventListener("DOMContentLoaded", function () {
-    let arrCategories = [];
-    let arrMenu = [];
-    menuCategories.map((item) => {
-        arrCategories.push(item.catName);
 
-        arrMenu.push(item.menuItems)
-    })
-    console.log(arrCategories)
-    console.log(arrMenu)
 
-    // элементы массивов соответствую друг другу 
-})
+
+
+
+
+
 
 
 
