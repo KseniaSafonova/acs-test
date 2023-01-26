@@ -1,14 +1,15 @@
-.content {
-    // border: 2px solid red;
-    // height: 500px;
-}
-
-.content {
-    flex-wrap: wrap;
-    display: flex;
-}
-
 .card {
-    border: 2px solid green;
-    width: 300px;
+    margin-top: 20px;
+    border: 1px solid red;
+    width: 400px;
+    height: 400px;
+    align-self: flex-end;
+}
+
+.content {
+    // display: flex;
+    // flex-wrap: wrap;
+    // height: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }

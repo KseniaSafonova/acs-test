@@ -1,9 +1,12 @@
-.content {
-  flex-wrap: wrap;
-  display: flex;
+.card {
+  margin-top: 20px;
+  border: 1px solid red;
+  width: 400px;
+  height: 400px;
+  align-self: flex-end;
 }
 
-.card {
-  border: 2px solid green;
-  width: 300px;
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }/*# sourceMappingURL=index.css.map */

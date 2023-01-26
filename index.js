@@ -291,6 +291,8 @@ let secondDishes = document.querySelector('.content__secondDishes');
 let garnish = document.querySelector('.content__garnish');
 let bakeryProducts = document.querySelector('.content__bakeryProducts');
 
+let block = document.querySelector('.block')
+
 document.addEventListener("DOMContentLoaded", function () {
 
     // menuCategories.map((elem) => {
@@ -313,20 +315,45 @@ document.addEventListener("DOMContentLoaded", function () {
     //     </div></div></div>`
     // })
 
+
+
     // for (i = 0; i < menuCategories.length; i++) {
     //     menuCategories[i].menuItems.map(function (item) {
     //         let element = document.createElement("div");
-    //         element.innerHTML = `${ item.itemName }`;
+    //         element.className = "catName" + menuCategories[i].catCode;
+    //         element.innerHTML = `
+    //         <div class="card">
+    //         <div>${item.itemName}</div><div>${item.itemDescription}</div>
+    //         </div>`;
     //         document.body.appendChild(element);
     //     })
     // }
 
+    // for (i = 0; i < menuCategories.length; i++) {
+    //     menuCategories[i].menuItems.map(function (item) {
+    //         let element = document.createElement("div");
+    //         element.className = 'element';
+    //         element.innerHTML = `
+    //                 <div class="catName"+ ${menuCategories[i].catCode}>
+    //                 <div>${item.itemName}</div>
+    //                 <div>${item.itemDescription}</div>
+    //                 </div>`;
+    //         document.body.appendChild(element);
+    //     }
+    //     )
+    // }
+
+
     for (i = 0; i < menuCategories.length; i++) {
         if (menuCategories[i].menuItems != null) {
+            // let element = document.createElement("div");
+            // element.className = "catName" + menuCategories[i].catCode;
+            //  проверка catCode
             dietFood.innerHTML = `<h2> Диетические блюда</h2 > `
             menuCategories[0].menuItems.map((item) => {
                 dietFood.innerHTML += `
                 <div class="card">
+                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
                 <div>${item.itemName}</div>
                 <div>${item.itemDescription}</div>
                 <div>${item.itemWeight}</div>
@@ -345,6 +372,7 @@ document.addEventListener("DOMContentLoaded", function () {
             menuCategories[1].menuItems.map((item) => {
                 breakfast.innerHTML += `
                 <div class="card">
+                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
                 <div>${item.itemName}</div>
                 <div>${item.itemDescription}</div>
                 <div>${item.itemWeight}</div>
@@ -362,6 +390,7 @@ document.addEventListener("DOMContentLoaded", function () {
             menuCategories[2].menuItems.map((item) => {
                 bread.innerHTML += `
                 <div class="card">
+                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
                 <div>${item.itemName}</div>
                 <div>${item.itemDescription}</div>
                 <div>${item.itemWeight}</div>
@@ -379,6 +408,7 @@ document.addEventListener("DOMContentLoaded", function () {
             menuCategories[3].menuItems.map((item) => {
                 coldDishes.innerHTML += `
                 <div class="card">
+                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
                 <div>${item.itemName}</div>
                 <div>${item.itemDescription}</div>
                 <div>${item.itemWeight}</div>
@@ -396,6 +426,7 @@ document.addEventListener("DOMContentLoaded", function () {
             menuCategories[4].menuItems.map((item) => {
                 secondDishes.innerHTML += `
                 <div class="card">
+                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
                 <div>${item.itemName}</div>
                 <div>${item.itemDescription}</div>
                 <div>${item.itemWeight}</div>
@@ -409,10 +440,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (menuCategories[i].menuItems != null) {
-            garnish.innerHTML = `<h2>гарниры</h2>`
+            garnish.innerHTML = `<h2>Гарниры</h2>`
             menuCategories[5].menuItems.map((item) => {
                 garnish.innerHTML += `
                 <div class="card">
+                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
                 <div>${item.itemName}</div>
                 <div>${item.itemDescription}</div>
                 <div>${item.itemWeight}</div>
@@ -430,6 +462,7 @@ document.addEventListener("DOMContentLoaded", function () {
             menuCategories[6].menuItems.map((item) => {
                 bakeryProducts.innerHTML += `
                 <div class="card">
+                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
                 <div>${item.itemName}</div>
                 <div>${item.itemDescription}</div>
                 <div>${item.itemWeight}</div>
