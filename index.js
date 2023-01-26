@@ -281,87 +281,168 @@ let menu = {
 document.querySelector('.header').innerHTML = `${menu.menuGroup}`
 
 let menuCategories = menu.serviceTimes[0].menuCategories;
-let block = document.querySelector('.block');
-let body = document.querySelector('.body');
+let main = document.querySelector('.main');
+let content = document.querySelector('.content');
+let dietFood = document.querySelector('.content__dietFood');
+let breakfast = document.querySelector('.content__breakfast');
+let bread = document.querySelector('.content__bread');
+let coldDishes = document.querySelector('.content__coldDishes');
+let secondDishes = document.querySelector('.content__secondDishes');
+let garnish = document.querySelector('.content__garnish');
+let bakeryProducts = document.querySelector('.content__bakeryProducts');
 
-menuCategories.map((elem) => {
-    // body.innerHTML += `
-    // <h2 class="">${item.catName}</h2>`
+document.addEventListener("DOMContentLoaded", function () {
 
-    elem.menuItems.map((item) => {
-        block.innerHTML += `
-        <h2 class="">${elem.catName}</h2>`
-        block.innerHTML += `
-        <div class="block2">
-            <div class="item__title">${item.itemName}</div>
-            <div class="item__description">${item.itemDescription}</div>
-            <div class="item__weight">Вес: ${item.itemWeight}</div>
-            <div class="item__price">Цена: ${item.itemPrice}</div>
-            </div>`
-    })
+    // menuCategories.map((elem) => {
+    //     elem.menuItems.unshift({ catName: elem.catName })
+    //     console.log(elem.menuItems)
+
+    //     main.innerHTML += `
+    //     <div class="block">
+    //         <h2>${elem.menuItems[0].catName}</h2>
+    //         <div class="block1">
+    //         <div>
+    //         ${elem.menuItems.map((i) =>
+    //         i.itemName
+    //     )}
+    //     </div>
+    //     <div>
+    //     ${elem.menuItems.map((i) =>
+    //         i.itemDescription
+    //     )}
+    //     </div></div></div>`
+    // })
+
+    // for (i = 0; i < menuCategories.length; i++) {
+    //     menuCategories[i].menuItems.map(function (item) {
+    //         let element = document.createElement("div");
+    //         element.innerHTML = `${ item.itemName }`;
+    //         document.body.appendChild(element);
+    //     })
+    // }
+
+    for (i = 0; i < menuCategories.length; i++) {
+        if (menuCategories[i].menuItems != null) {
+            dietFood.innerHTML = `<h2> Диетические блюда</h2 > `
+            menuCategories[0].menuItems.map((item) => {
+                dietFood.innerHTML += `
+                <div class="card">
+                <div>${item.itemName}</div>
+                <div>${item.itemDescription}</div>
+                <div>${item.itemWeight}</div>
+                <div>${item.itemPrice}</div>
+                </div>
+                `
+            })
+
+        }
+        else {
+            dietFood.innerHTML = ''
+        }
+
+        if (menuCategories[i].menuItems != null) {
+            breakfast.innerHTML = `<h2>Завтрак</h2>`
+            menuCategories[1].menuItems.map((item) => {
+                breakfast.innerHTML += `
+                <div class="card">
+                <div>${item.itemName}</div>
+                <div>${item.itemDescription}</div>
+                <div>${item.itemWeight}</div>
+                <div>${item.itemPrice}</div>
+                </div>
+                `
+            })
+        }
+        else {
+            breakfast.innerHTML = ''
+        }
+
+        if (menuCategories[i].menuItems != null) {
+            bread.innerHTML = `<h2>Хлеб</h2>`
+            menuCategories[2].menuItems.map((item) => {
+                bread.innerHTML += `
+                <div class="card">
+                <div>${item.itemName}</div>
+                <div>${item.itemDescription}</div>
+                <div>${item.itemWeight}</div>
+                <div>${item.itemPrice}</div>
+                </div>
+                `
+            })
+        }
+        else {
+            bread.innerHTML = ''
+        }
+
+        if (menuCategories[i].menuItems != null) {
+            coldDishes.innerHTML = `<h2>Холодные блюда</h2>`
+            menuCategories[3].menuItems.map((item) => {
+                coldDishes.innerHTML += `
+                <div class="card">
+                <div>${item.itemName}</div>
+                <div>${item.itemDescription}</div>
+                <div>${item.itemWeight}</div>
+                <div>${item.itemPrice}</div>
+                </div>
+                `
+            })
+        }
+        else {
+            coldDishes.innerHTML = ''
+        }
+
+        if (menuCategories[i].menuItems != null) {
+            secondDishes.innerHTML = `<h2>Вторые блюда</h2>`
+            menuCategories[4].menuItems.map((item) => {
+                secondDishes.innerHTML += `
+                <div class="card">
+                <div>${item.itemName}</div>
+                <div>${item.itemDescription}</div>
+                <div>${item.itemWeight}</div>
+                <div>${item.itemPrice}</div>
+                </div>
+                `
+            })
+        }
+        else {
+            secondDishes.innerHTML = ''
+        }
+
+        if (menuCategories[i].menuItems != null) {
+            garnish.innerHTML = `<h2>гарниры</h2>`
+            menuCategories[5].menuItems.map((item) => {
+                garnish.innerHTML += `
+                <div class="card">
+                <div>${item.itemName}</div>
+                <div>${item.itemDescription}</div>
+                <div>${item.itemWeight}</div>
+                <div>${item.itemPrice}</div>
+                </div>
+                `
+            })
+        }
+        else {
+            garnish.innerHTML = ''
+        }
+
+        if (menuCategories[i].menuItems != null) {
+            bakeryProducts.innerHTML = `<h2>Выпечка</h2>`
+            menuCategories[6].menuItems.map((item) => {
+                bakeryProducts.innerHTML += `
+                <div class="card">
+                <div>${item.itemName}</div>
+                <div>${item.itemDescription}</div>
+                <div>${item.itemWeight}</div>
+                <div>${item.itemPrice}</div>
+                </div>
+                `
+            })
+        }
+        else {
+            bakeryProducts.innerHTML = ''
+        }
+    }
 })
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     let arrCategories = [];
-//     let arrMenu = [];
-//     menuCategories.map((item) => {
-//         arrCategories.push(item.catName);
-//         arrMenu.push(item.menuItems)
-//     })
-
-//     for (i = 0; i < arrCategories.length; i++) {
-//         block.innerHTML += `
-//         <div>${arrCategories[i]}</div>`
-//         // console.log(arrCategories[i])
-//         // console.log(arrMenu[i])
-//         arrMenu[i].map((item) => {
-//             block.innerHTML += `
-//             <ul class="ul">
-//             <li class="item__title">${item.itemName}</li>
-//             <li class="item__description">${item.itemDescription}</li>
-//             <li class="item__weight">Вес: ${item.itemWeight}</li>
-//             <li class="item__price">Цена: ${item.itemPrice}</li>
-//              </ul>
-// `
-//         })
-//     }
-// })
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-
-//     menuCategories.map((item) => {
-//         item.menuItems.map((element) => {
-//             let object = {
-//                 catName: item.catName,
-//                 itemName: element.itemName,
-//                 itemDescription: element.itemDescription,
-//                 itemWeight: element.itemWeight,
-//                 itemPrice: element.itemPrice
-//             }
-//             console.log(object)
-//         })
-//     })
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

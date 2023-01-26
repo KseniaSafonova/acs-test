@@ -1,8 +1,9 @@
-.block {
-  border: 2px solid green;
+.content {
+  flex-wrap: wrap;
+  display: flex;
 }
 
-.block2 {
+.card {
   border: 2px solid green;
   width: 300px;
 }/*# sourceMappingURL=index.css.map */

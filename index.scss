@@ -1,18 +1,14 @@
-.block {
-    border: 2px solid green;
+.content {
+    // border: 2px solid red;
+    // height: 500px;
 }
 
-.block2 {
+.content {
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.card {
     border: 2px solid green;
     width: 300px;
 }
-
-.body {
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-around;
-}
-
-// .content {
-//     display: flex;
-// }
