@@ -291,65 +291,63 @@ document.addEventListener("DOMContentLoaded", function () {
         item.menuItems.map((category) => {
             main.innerHTML += `
             <div class="card">
-            <div class="card__img">
-                <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${category.url}">
-            </div>
-            <div class="card__content">
-                <div class="card__content-title">${category.itemName}</div>
-                <div class="card__content-description">${category.itemDescription}</div>
-                <div class="card__content-weight">${category.itemWeight} гр</div>
-                <div class="card__content-price">${category.itemPrice}
-                <img src="ruble.png">
-            </div>
-            <div class="card__content-count">
-                <button onclick="Decrease()" id="buttonDecrease">-</button>
-                <input placeholder=0 id="countInput">
-                <button onclick="Increase()">+</button>
-            </div>
-            </div>
+                <div class="card__img">
+                    <div class="card__img-count"></div>
+                    <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${category.url}">
+                </div>
+                <div class="card__content">
+                    <div class="card__content-title">${category.itemName}</div>
+                    <div class="card__content-description">${category.itemDescription}</div>
+                    <div class="card__content-weight">${category.itemWeight} гр</div>    
+                    <div class="card__content-count">
+                    <button id="buttonDecrease" onclick="buttonDecrease()">-</button>
+                    <div class="card__content-price">${category.itemPrice}
+                    <img src="ruble.png">
+                    </div>
+                    <button id="buttonIncrease" onclick="buttonIncrease()">+</button>
+                </div>
             </div>`
-        })
 
+            // let buttonDecrease = document.getElementById('buttonDecrease');
+            // let buttonIncrease = document.getElementById('buttonIncrease');
+
+
+            // buttonDecrease.onclick = function () {
+            //     if (count > 0) {
+            //         count -= 1
+            //         console.log(count)
+            //     }
+            //     else {
+            //         return
+            //     }
+            // }
+
+            // buttonIncrease.onclick = function () {
+            //     let countPlus = count;
+            //     count += 1
+            //     console.log(count)
+            // }
+
+        })
     })
+
 })
 
+let countBlock = document.querySelector('.card__img-count')
+let count = 0;
 
-let count = 0
-const Increase = () => {
-    count += 1
-
-    console.log(count)
-}
-
-const Decrease = () => {
-
+function buttonDecrease() {
     if (count > 0) {
-        count -= 1
+        countBlock.innerHTML = count - 1
     }
-    else {
-        return
-    }
+}
 
-    console.log(count)
+function buttonIncrease() {
+    countBlock.innerHTML = count + 1
 }
 
 
 
-
-    // for (i = 0; i < menuCategories.length; i++) {
-    //     console.log(menuCategories[i].catName)
-    //     menuCategories[i].menuItems.map(function (item) {
-    //         let element = document.createElement("div");
-    //         element.className = "catName" + menuCategories[i].catCode;
-    //         element.innerHTML = `
-    //         <div class="card">
-    //         <div>${item.itemName}</div>
-    //         <div>${item.itemDescription}</div>
-    //         </div>`;
-    //         document.body.appendChild(element);
-    //     })
-    // }
-// })
 
 
 

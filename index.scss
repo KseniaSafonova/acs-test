@@ -16,6 +16,17 @@
     width: 80%;
     height: 205px;
 
+    &__img {
+        // filter: brightness(60%);
+
+        &-count {
+            border: 1px solid red;
+            height: 20px;
+            width: 30px;
+            position: absolute;
+        }
+    }
+
     &__content {
         margin-left: 20px;
 
@@ -44,9 +55,20 @@
         }
 
         &-count {
-            margin-top: 10px;
+            margin-top: 15px;
+            display: flex;
+            width: 150px;
+            justify-content: space-between;
+
+            button {
+                border-radius: 50%;
+                background-color: #ffff;
+                border: 1px solid grey;
+                height: 30px;
+                width: 30px;
+                font-size: 18px;
+                margin-top: 5px;
+            }
         }
-
-
     }
 }

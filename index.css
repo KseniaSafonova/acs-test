@@ -16,6 +16,12 @@
   width: 80%;
   height: 205px;
 }
+.card__img-count {
+  border: 1px solid red;
+  height: 20px;
+  width: 30px;
+  position: absolute;
+}
 .card__content {
   margin-left: 20px;
 }
@@ -39,5 +45,17 @@
   margin-left: -10px;
 }
 .card__content-count {
-  margin-top: 10px;
+  margin-top: 15px;
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+}
+.card__content-count button {
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid grey;
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  margin-top: 5px;
 }/*# sourceMappingURL=index.css.map */
