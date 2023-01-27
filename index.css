@@ -1,12 +1,43 @@
-.card {
-  margin-top: 20px;
-  border: 1px solid red;
-  width: 400px;
-  height: 400px;
-  align-self: flex-end;
+.main {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+.category__title {
+  margin-top: 50px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.card {
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 0 20px 20px 0;
+  margin-top: 20px;
+  width: 80%;
+  height: 205px;
+}
+.card__content {
+  margin-left: 20px;
+}
+.card__content-title {
+  font-weight: 700;
+  margin-top: 15px;
+}
+.card__content-description {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.card__content-weight {
+  margin-top: 10px;
+}
+.card__content-price {
+  margin-top: 10px;
+  font-size: 20px;
+}
+.card__content-price img {
+  margin-bottom: -5px;
+  margin-left: -10px;
+}
+.card__content-count {
+  margin-top: 10px;
 }/*# sourceMappingURL=index.css.map */

@@ -282,200 +282,81 @@ document.querySelector('.header').innerHTML = `${menu.menuGroup}`
 
 let menuCategories = menu.serviceTimes[0].menuCategories;
 let main = document.querySelector('.main');
-let content = document.querySelector('.content');
-let dietFood = document.querySelector('.content__dietFood');
-let breakfast = document.querySelector('.content__breakfast');
-let bread = document.querySelector('.content__bread');
-let coldDishes = document.querySelector('.content__coldDishes');
-let secondDishes = document.querySelector('.content__secondDishes');
-let garnish = document.querySelector('.content__garnish');
-let bakeryProducts = document.querySelector('.content__bakeryProducts');
-
-let block = document.querySelector('.block')
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // menuCategories.map((elem) => {
-    //     elem.menuItems.unshift({ catName: elem.catName })
-    //     console.log(elem.menuItems)
+    menuCategories.map((item) => {
+        main.innerHTML += `<div class="category__title">${item.catName}</div>`;
 
-    //     main.innerHTML += `
-    //     <div class="block">
-    //         <h2>${elem.menuItems[0].catName}</h2>
-    //         <div class="block1">
-    //         <div>
-    //         ${elem.menuItems.map((i) =>
-    //         i.itemName
-    //     )}
-    //     </div>
-    //     <div>
-    //     ${elem.menuItems.map((i) =>
-    //         i.itemDescription
-    //     )}
-    //     </div></div></div>`
-    // })
+        item.menuItems.map((category) => {
+            main.innerHTML += `
+            <div class="card">
+            <div class="card__img">
+                <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${category.url}">
+            </div>
+            <div class="card__content">
+                <div class="card__content-title">${category.itemName}</div>
+                <div class="card__content-description">${category.itemDescription}</div>
+                <div class="card__content-weight">${category.itemWeight} гр</div>
+                <div class="card__content-price">${category.itemPrice}
+                <img src="ruble.png">
+            </div>
+            <div class="card__content-count">
+                <button onclick="Decrease()" id="buttonDecrease">-</button>
+                <input placeholder=0 id="countInput">
+                <button onclick="Increase()">+</button>
+            </div>
+            </div>
+            </div>`
+        })
+
+    })
+})
+
+
+let count = 0
+const Increase = () => {
+    count += 1
+
+    console.log(count)
+}
+
+const Decrease = () => {
+
+    if (count > 0) {
+        count -= 1
+    }
+    else {
+        return
+    }
+
+    console.log(count)
+}
+
 
 
 
     // for (i = 0; i < menuCategories.length; i++) {
+    //     console.log(menuCategories[i].catName)
     //     menuCategories[i].menuItems.map(function (item) {
     //         let element = document.createElement("div");
     //         element.className = "catName" + menuCategories[i].catCode;
     //         element.innerHTML = `
     //         <div class="card">
-    //         <div>${item.itemName}</div><div>${item.itemDescription}</div>
+    //         <div>${item.itemName}</div>
+    //         <div>${item.itemDescription}</div>
     //         </div>`;
     //         document.body.appendChild(element);
     //     })
     // }
-
-    // for (i = 0; i < menuCategories.length; i++) {
-    //     menuCategories[i].menuItems.map(function (item) {
-    //         let element = document.createElement("div");
-    //         element.className = 'element';
-    //         element.innerHTML = `
-    //                 <div class="catName"+ ${menuCategories[i].catCode}>
-    //                 <div>${item.itemName}</div>
-    //                 <div>${item.itemDescription}</div>
-    //                 </div>`;
-    //         document.body.appendChild(element);
-    //     }
-    //     )
-    // }
+// })
 
 
-    for (i = 0; i < menuCategories.length; i++) {
-        if (menuCategories[i].menuItems != null) {
-            // let element = document.createElement("div");
-            // element.className = "catName" + menuCategories[i].catCode;
-            //  проверка catCode
-            dietFood.innerHTML = `<h2> Диетические блюда</h2 > `
-            menuCategories[0].menuItems.map((item) => {
-                dietFood.innerHTML += `
-                <div class="card">
-                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
-                <div>${item.itemName}</div>
-                <div>${item.itemDescription}</div>
-                <div>${item.itemWeight}</div>
-                <div>${item.itemPrice}</div>
-                </div>
-                `
-            })
 
-        }
-        else {
-            dietFood.innerHTML = ''
-        }
 
-        if (menuCategories[i].menuItems != null) {
-            breakfast.innerHTML = `<h2>Завтрак</h2>`
-            menuCategories[1].menuItems.map((item) => {
-                breakfast.innerHTML += `
-                <div class="card">
-                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
-                <div>${item.itemName}</div>
-                <div>${item.itemDescription}</div>
-                <div>${item.itemWeight}</div>
-                <div>${item.itemPrice}</div>
-                </div>
-                `
-            })
-        }
-        else {
-            breakfast.innerHTML = ''
-        }
 
-        if (menuCategories[i].menuItems != null) {
-            bread.innerHTML = `<h2>Хлеб</h2>`
-            menuCategories[2].menuItems.map((item) => {
-                bread.innerHTML += `
-                <div class="card">
-                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
-                <div>${item.itemName}</div>
-                <div>${item.itemDescription}</div>
-                <div>${item.itemWeight}</div>
-                <div>${item.itemPrice}</div>
-                </div>
-                `
-            })
-        }
-        else {
-            bread.innerHTML = ''
-        }
 
-        if (menuCategories[i].menuItems != null) {
-            coldDishes.innerHTML = `<h2>Холодные блюда</h2>`
-            menuCategories[3].menuItems.map((item) => {
-                coldDishes.innerHTML += `
-                <div class="card">
-                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
-                <div>${item.itemName}</div>
-                <div>${item.itemDescription}</div>
-                <div>${item.itemWeight}</div>
-                <div>${item.itemPrice}</div>
-                </div>
-                `
-            })
-        }
-        else {
-            coldDishes.innerHTML = ''
-        }
 
-        if (menuCategories[i].menuItems != null) {
-            secondDishes.innerHTML = `<h2>Вторые блюда</h2>`
-            menuCategories[4].menuItems.map((item) => {
-                secondDishes.innerHTML += `
-                <div class="card">
-                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
-                <div>${item.itemName}</div>
-                <div>${item.itemDescription}</div>
-                <div>${item.itemWeight}</div>
-                <div>${item.itemPrice}</div>
-                </div>
-                `
-            })
-        }
-        else {
-            secondDishes.innerHTML = ''
-        }
-
-        if (menuCategories[i].menuItems != null) {
-            garnish.innerHTML = `<h2>Гарниры</h2>`
-            menuCategories[5].menuItems.map((item) => {
-                garnish.innerHTML += `
-                <div class="card">
-                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
-                <div>${item.itemName}</div>
-                <div>${item.itemDescription}</div>
-                <div>${item.itemWeight}</div>
-                <div>${item.itemPrice}</div>
-                </div>
-                `
-            })
-        }
-        else {
-            garnish.innerHTML = ''
-        }
-
-        if (menuCategories[i].menuItems != null) {
-            bakeryProducts.innerHTML = `<h2>Выпечка</h2>`
-            menuCategories[6].menuItems.map((item) => {
-                bakeryProducts.innerHTML += `
-                <div class="card">
-                <div><img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}"></div>
-                <div>${item.itemName}</div>
-                <div>${item.itemDescription}</div>
-                <div>${item.itemWeight}</div>
-                <div>${item.itemPrice}</div>
-                </div>
-                `
-            })
-        }
-        else {
-            bakeryProducts.innerHTML = ''
-        }
-    }
-})
 
 
 
