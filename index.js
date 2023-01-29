@@ -290,9 +290,9 @@ document.addEventListener("DOMContentLoaded", function () {
             main.innerHTML += `
             <div class="card">
                 <div class="card__img">
-                <div class="card__img-count"></div>
-                    <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${element.url}">
+                <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${element.url}">
                 </div>
+                <div class="card__img-count"></div>
                 <div class="card__content">
                     <div class="card__content-title">${element.itemName}</div>
                     <div class="card__content-description">${element.itemDescription}</div>
@@ -332,7 +332,7 @@ function addCount(card) {
     let number = 0;
 
     buttonIncrease.addEventListener("click", function () {
-        card__img.style.filter = "brightness(80%)";
+        card__img.style.filter = "brightness(75%)";
         number += 1;
         count.innerHTML = number;
     });
@@ -341,10 +341,11 @@ function addCount(card) {
             number -= 1;
             count.innerHTML = number;
         }
-        else if (number < 1) {
+        else if (number == 0) {
             count.innerHTML = "";
             card__img.style.filter = "";
         }
+        // console.log(number) ??? убрать 0
         // else {
         //     return;
         // }
