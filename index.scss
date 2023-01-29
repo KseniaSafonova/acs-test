@@ -17,13 +17,21 @@
     height: 205px;
 
     &__img {
-        // filter: brightness(60%);
+        // position: relative;
+        z-index: 0;
 
         &-count {
-            border: 1px solid red;
             height: 20px;
             width: 30px;
             position: absolute;
+            z-index: 1;
+            height: 205px;
+            width: 363px;
+            font-size: 72px;
+            color: #FFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 

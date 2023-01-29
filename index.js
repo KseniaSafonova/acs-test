@@ -284,74 +284,72 @@ let menuCategories = menu.serviceTimes[0].menuCategories;
 let main = document.querySelector('.main');
 
 document.addEventListener("DOMContentLoaded", function () {
-
     menuCategories.map((item) => {
         main.innerHTML += `<div class="category__title">${item.catName}</div>`;
-
-        item.menuItems.map((category) => {
+        item.menuItems.map((element) => {
             main.innerHTML += `
             <div class="card">
                 <div class="card__img">
-                    <div class="card__img-count"></div>
-                    <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${category.url}">
+                <div class="card__img-count"></div>
+                    <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${element.url}">
                 </div>
                 <div class="card__content">
-                    <div class="card__content-title">${category.itemName}</div>
-                    <div class="card__content-description">${category.itemDescription}</div>
-                    <div class="card__content-weight">${category.itemWeight} гр</div>    
+                    <div class="card__content-title">${element.itemName}</div>
+                    <div class="card__content-description">${element.itemDescription}</div>
+                    <div class="card__content-weight">${element.itemWeight} гр</div>    
                     <div class="card__content-count">
-                    <button id="buttonDecrease" onclick="buttonDecrease()">-</button>
-                    <div class="card__content-price">${category.itemPrice}
+                    <button class="buttonDecrease">-</button>
+                    <div class="card__content-price">${element.itemPrice}
                     <img src="ruble.png">
                     </div>
-                    <button id="buttonIncrease" onclick="buttonIncrease()">+</button>
+                    <button class="buttonIncrease">+</button>
                 </div>
             </div>`
-
-            // let buttonDecrease = document.getElementById('buttonDecrease');
-            // let buttonIncrease = document.getElementById('buttonIncrease');
-
-
-            // buttonDecrease.onclick = function () {
-            //     if (count > 0) {
-            //         count -= 1
-            //         console.log(count)
-            //     }
-            //     else {
-            //         return
-            //     }
-            // }
-
-            // buttonIncrease.onclick = function () {
-            //     let countPlus = count;
-            //     count += 1
-            //     console.log(count)
-            // }
-
         })
     })
 
+    let cards = document.querySelectorAll('.card')
+    cards.forEach(addCount)
+
+    // <button value=${element.itemCode} class="showID">ID</button>
+
+    // let showID = document.querySelectorAll('.showID')
+    // console.log(showID)
+
+    // showID.forEach(button => {
+    //     button.addEventListener('click', function (event) {
+    //         console.log(event.target)
+    //     })
+    // })
 })
 
-let countBlock = document.querySelector('.card__img-count')
-let count = 0;
+function addCount(card) {
+    let buttonIncrease = card.querySelector('.buttonIncrease');
+    let buttonDecrease = card.querySelector('.buttonDecrease');
+    let count = card.querySelector('.card__img-count');
+    let card__img = card.querySelector('.card__img')
 
-function buttonDecrease() {
-    if (count > 0) {
-        countBlock.innerHTML = count - 1
-    }
+    let number = 0;
+
+    buttonIncrease.addEventListener("click", function () {
+        card__img.style.filter = "brightness(80%)";
+        number += 1;
+        count.innerHTML = number;
+    });
+    buttonDecrease.addEventListener("click", function () {
+        if (number > 0) {
+            number -= 1;
+            count.innerHTML = number;
+        }
+        else if (number < 1) {
+            count.innerHTML = "";
+            card__img.style.filter = "";
+        }
+        // else {
+        //     return;
+        // }
+    });
 }
-
-function buttonIncrease() {
-    countBlock.innerHTML = count + 1
-}
-
-
-
-
-
-
-
 
 
 

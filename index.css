@@ -16,11 +16,21 @@
   width: 80%;
   height: 205px;
 }
+.card__img {
+  z-index: 0;
+}
 .card__img-count {
-  border: 1px solid red;
   height: 20px;
   width: 30px;
   position: absolute;
+  z-index: 1;
+  height: 205px;
+  width: 363px;
+  font-size: 72px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .card__content {
   margin-left: 20px;
