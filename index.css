@@ -1,20 +1,29 @@
+.header {
+  font-size: 32px;
+}
+
+h2 {
+  margin-top: 100px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .main {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.category__title {
-  margin-top: 50px;
-  font-size: 24px;
-  font-weight: 700;
-}
-
 .card {
-  display: flex;
   border: 1px solid grey;
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 0 20px 20px;
+  width: 364px;
+  height: 450px;
+  margin-left: 20px;
   margin-top: 20px;
-  width: 80%;
-  height: 205px;
+  display: grid;
+  text-align: center;
 }
 .card__img {
   z-index: 0;
@@ -32,14 +41,15 @@
   align-items: center;
   justify-content: center;
 }
-.card__content {
-  margin-left: 20px;
-}
 .card__content-title {
+  font-size: 18px;
   font-weight: 700;
   margin-top: 15px;
 }
 .card__content-description {
+  width: 350px;
+  box-sizing: border-box;
+  padding-left: 10px;
   margin-top: 15px;
   font-size: 14px;
 }
@@ -48,17 +58,15 @@
 }
 .card__content-price {
   margin-top: 10px;
+  margin-left: 5px;
   font-size: 20px;
 }
-.card__content-price img {
-  margin-bottom: -5px;
-  margin-left: -10px;
-}
 .card__content-count {
-  margin-top: 15px;
   display: flex;
-  width: 150px;
-  justify-content: space-between;
+  justify-content: center;
+}
+.card__content-count div {
+  display: flex;
 }
 .card__content-count button {
   border-radius: 50%;

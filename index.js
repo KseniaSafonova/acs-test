@@ -282,7 +282,6 @@ let menu = {
 document.querySelector('.header').innerHTML = `${menu.menuGroup}`
 
 let menuCategories = menu.serviceTimes[0].menuCategories;
-let cards = document.querySelectorAll('.cards');
 let cat0 = document.querySelector('.cat0')
 let cat1 = document.querySelector('.cat1')
 let cat2 = document.querySelector('.cat2')
@@ -290,32 +289,6 @@ let cat3 = document.querySelector('.cat3')
 let cat4 = document.querySelector('.cat4')
 let cat5 = document.querySelector('.cat5')
 let cat6 = document.querySelector('.cat6')
-
-// let numbers = [0, 1, 2, 3, 4, 5, 6]
-
-// for (let i = 0; i < 20; i++) {
-// cards.forEach(elem => elem.innerHTML += `${numbers[i]}`)
-//     cards[i].innerHTML += `
-//     <div class="card">
-//     <div>${menuCategories[i].menuItems.map((item) =>
-//         `
-//     <div class="card__img">
-//     <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}">
-//     </div>
-//     <div>${item.itemName}</div>
-//     <div>${item.itemDescription}</div>
-//     <div>${item.itemWeight}</div>
-//     <div>${item.itemPrice}</div>
-//     `)}</div>
-//     </div>`
-// }
-// cards.forEach(element => element.innerHTML = numbers.map((num) => `${num}`))
-// var arr = [];
-
-// for (let i = 0; i < 8; i++) {
-//     let div = document.body.appendChild(document.createElement('div'));
-//     arr.push(div);
-// };
 
 menuCategories[0].menuItems.map((element) => {
     cat0.innerHTML += `
@@ -460,37 +433,37 @@ menuCategories[6].menuItems.map((element) => {
         </div>`})
 
 
-// let cards = document.querySelectorAll('.card')
-// cards.forEach(addCount)
-// })
+let cards = document.querySelectorAll('.card')
+cards.forEach(addCount)
 
-// function addCount(card) {
-//     let buttonIncrease = card.querySelector('.buttonIncrease');
-//     let buttonDecrease = card.querySelector('.buttonDecrease');
-//     let count = card.querySelector('.card__img-count');
-//     let card__img = card.querySelector('.card__img')
 
-//     let number = 0;
+function addCount(card) {
+    let buttonIncrease = card.querySelector('.buttonIncrease');
+    let buttonDecrease = card.querySelector('.buttonDecrease');
+    let count = card.querySelector('.card__img-count');
+    let card__img = card.querySelector('.card__img')
 
-//     buttonIncrease.addEventListener("click", function () {
-//         card__img.style.filter = "brightness(75%)";
-//         number += 1;
-//         count.innerHTML = number;
-//     });
-//     buttonDecrease.addEventListener("click", function () {
-//         if (number > 0) {
-//             number -= 1;
-//             count.innerHTML = number;
-//         }
-//         else if (number == 0) {
-//             count.innerHTML = "";
-//             card__img.style.filter = "";
-//         }
+    let number = 0;
+
+    buttonIncrease.addEventListener("click", function () {
+        card__img.style.filter = "brightness(75%)";
+        number += 1;
+        count.innerHTML = number;
+    });
+    buttonDecrease.addEventListener("click", function () {
+        if (number > 0) {
+            number -= 1;
+            count.innerHTML = number;
+        }
+        else if (number == 0) {
+            count.innerHTML = "";
+            card__img.style.filter = "";
+        }
         //         // console.log(number) ??? убрать 0
         //         // else {
         //         //     return;
         //         // }
-//     });
-// }
+    });
+}
 
 
