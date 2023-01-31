@@ -1,3 +1,4 @@
+
 // function downloadMenu() {
 //     fetch('url')
 //         .then((response) => response.json())
@@ -281,86 +282,215 @@ let menu = {
 document.querySelector('.header').innerHTML = `${menu.menuGroup}`
 
 let menuCategories = menu.serviceTimes[0].menuCategories;
-let main = document.querySelector('.main');
+let cards = document.querySelectorAll('.cards');
+let cat0 = document.querySelector('.cat0')
+let cat1 = document.querySelector('.cat1')
+let cat2 = document.querySelector('.cat2')
+let cat3 = document.querySelector('.cat3')
+let cat4 = document.querySelector('.cat4')
+let cat5 = document.querySelector('.cat5')
+let cat6 = document.querySelector('.cat6')
 
-document.addEventListener("DOMContentLoaded", function () {
-    menuCategories.map((item) => {
-        main.innerHTML += `<div class="category__title">${item.catName}</div>`;
-        item.menuItems.map((element) => {
-            main.innerHTML += `
-            <div class="card">
-                <div class="card__img">
-                <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${element.url}">
-                </div>
-                <div class="card__img-count"></div>
-                <div class="card__content">
-                    <div class="card__content-title">${element.itemName}</div>
-                    <div class="card__content-description">${element.itemDescription}</div>
-                    <div class="card__content-weight">${element.itemWeight} гр</div>    
-                    <div class="card__content-count">
-                    <button class="buttonDecrease">-</button>
-                    <div class="card__content-price">${element.itemPrice}
-                    <img src="ruble.png">
-                    </div>
-                    <button class="buttonIncrease">+</button>
-                </div>
-            </div>`
-        })
-    })
+// let numbers = [0, 1, 2, 3, 4, 5, 6]
 
-    let cards = document.querySelectorAll('.card')
-    cards.forEach(addCount)
+// for (let i = 0; i < 20; i++) {
+// cards.forEach(elem => elem.innerHTML += `${numbers[i]}`)
+//     cards[i].innerHTML += `
+//     <div class="card">
+//     <div>${menuCategories[i].menuItems.map((item) =>
+//         `
+//     <div class="card__img">
+//     <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${item.url}">
+//     </div>
+//     <div>${item.itemName}</div>
+//     <div>${item.itemDescription}</div>
+//     <div>${item.itemWeight}</div>
+//     <div>${item.itemPrice}</div>
+//     `)}</div>
+//     </div>`
+// }
+// cards.forEach(element => element.innerHTML = numbers.map((num) => `${num}`))
+// var arr = [];
 
-    // <button value=${element.itemCode} class="showID">ID</button>
+// for (let i = 0; i < 8; i++) {
+//     let div = document.body.appendChild(document.createElement('div'));
+//     arr.push(div);
+// };
 
-    // let showID = document.querySelectorAll('.showID')
-    // console.log(showID)
+menuCategories[0].menuItems.map((element) => {
+    cat0.innerHTML += `
+        <div class="card">
+            <div class="card__img">
+            <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${element.url}">
+            </div>
+            <div class="card__img-count"></div>
+            <div class="card__content">
+            <div class="card__content-title">${element.itemName}</div>
+            <div class="card__content-description">${element.itemDescription}</div>
+            <div class="card__content-weight">${element.itemWeight} гр</div>
+            <div class="card__content-count">
+            <button class="buttonDecrease">-</button>
+            <div class="card__content-price">${element.itemPrice}
+            <img src="ruble.png">
+            </div>
+            <button class="buttonIncrease">+</button>
+            </div>
+            </div>`})
 
-    // showID.forEach(button => {
-    //     button.addEventListener('click', function (event) {
-    //         console.log(event.target)
-    //     })
-    // })
-})
+menuCategories[1].menuItems.map((element) => {
+    cat1.innerHTML += `
+        <div class="card">
+        <div class="card__img">
+        <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${element.url}">
+        </div>
+        <div class="card__img-count"></div>
+        <div class="card__content">
+        <div class="card__content-title">${element.itemName}</div>
+        <div class="card__content-description">${element.itemDescription}</div>
+        <div class="card__content-weight">${element.itemWeight} гр</div>
+        <div class="card__content-count">
+        <button class="buttonDecrease">-</button>
+        <div class="card__content-price">${element.itemPrice}
+        <img src="ruble.png">
+        </div>
+        <button class="buttonIncrease">+</button>
+        </div>
+        </div>`})
 
-function addCount(card) {
-    let buttonIncrease = card.querySelector('.buttonIncrease');
-    let buttonDecrease = card.querySelector('.buttonDecrease');
-    let count = card.querySelector('.card__img-count');
-    let card__img = card.querySelector('.card__img')
+menuCategories[2].menuItems.map((element) => {
+    cat2.innerHTML += `
+        <div class="card">
+        <div class="card__img">
+        <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${element.url}">
+        </div>
+        <div class="card__img-count"></div>
+        <div class="card__content">
+        <div class="card__content-title">${element.itemName}</div>
+        <div class="card__content-description">${element.itemDescription}</div>
+        <div class="card__content-weight">${element.itemWeight} гр</div>
+        <div class="card__content-count">
+        <button class="buttonDecrease">-</button>
+        <div class="card__content-price">${element.itemPrice}
+        <img src="ruble.png">
+        </div>
+        <button class="buttonIncrease">+</button>
+        </div>
+        </div>`})
 
-    let number = 0;
+menuCategories[3].menuItems.map((element) => {
+    cat3.innerHTML += `
+        <div class="card">
+        <div class="card__img">
+        <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${element.url}">
+        </div>
+        <div class="card__img-count"></div>
+        <div class="card__content">
+        <div class="card__content-title">${element.itemName}</div>
+        <div class="card__content-description">${element.itemDescription}</div>
+        <div class="card__content-weight">${element.itemWeight} гр</div>
+        <div class="card__content-count">
+        <button class="buttonDecrease">-</button>
+        <div class="card__content-price">${element.itemPrice}
+        <img src="ruble.png">
+        </div>
+        <button class="buttonIncrease">+</button>
+        </div>
+        </div>`})
 
-    buttonIncrease.addEventListener("click", function () {
-        card__img.style.filter = "brightness(75%)";
-        number += 1;
-        count.innerHTML = number;
-    });
-    buttonDecrease.addEventListener("click", function () {
-        if (number > 0) {
-            number -= 1;
-            count.innerHTML = number;
-        }
-        else if (number == 0) {
-            count.innerHTML = "";
-            card__img.style.filter = "";
-        }
-        // console.log(number) ??? убрать 0
-        // else {
-        //     return;
-        // }
-    });
-}
+menuCategories[4].menuItems.map((element) => {
+    cat4.innerHTML += `
+        <div class="card">
+        <div class="card__img">
+        <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${element.url}">
+        </div>
+        <div class="card__img-count"></div>
+        <div class="card__content">
+        <div class="card__content-title">${element.itemName}</div>
+        <div class="card__content-description">${element.itemDescription}</div>
+        <div class="card__content-weight">${element.itemWeight} гр</div>
+        <div class="card__content-count">
+        <button class="buttonDecrease">-</button>
+        <div class="card__content-price">${element.itemPrice}
+        <img src="ruble.png">
+        </div>
+        <button class="buttonIncrease">+</button>
+        </div>
+        </div>`})
+
+menuCategories[5].menuItems.map((element) => {
+    cat5.innerHTML += `
+        <div class="card">
+        <div class="card__img">
+        <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${element.url}">
+        </div>
+        <div class="card__img-count"></div>
+        <div class="card__content">
+        <div class="card__content-title">${element.itemName}</div>
+        <div class="card__content-description">${element.itemDescription}</div>
+        <div class="card__content-weight">${element.itemWeight} гр</div>
+        <div class="card__content-count">
+        <button class="buttonDecrease">-</button>
+        <div class="card__content-price">${element.itemPrice}
+        <img src="ruble.png">
+        </div>
+        <button class="buttonIncrease">+</button>
+        </div>
+        </div>`})
+
+menuCategories[6].menuItems.map((element) => {
+    cat6.innerHTML += `
+        <div class="card">
+        <div class="card__img">
+        <img src="https://smartapp.acs-cis.ru/assets/img/Menu/${element.url}">
+        </div>
+        <div class="card__img-count"></div>
+        <div class="card__content">
+        <div class="card__content-title">${element.itemName}</div>
+        <div class="card__content-description">${element.itemDescription}</div>
+        <div class="card__content-weight">${element.itemWeight} гр</div>
+        <div class="card__content-count">
+        <div>
+        <button class="buttonDecrease">-</button>
+        <div class="card__content-price">${element.itemPrice}
+        <img src="ruble.png">
+        </div>
+        <button class="buttonIncrease">+</button>
+        </div>
+        </div>
+        </div>`})
 
 
+// let cards = document.querySelectorAll('.card')
+// cards.forEach(addCount)
+// })
 
+// function addCount(card) {
+//     let buttonIncrease = card.querySelector('.buttonIncrease');
+//     let buttonDecrease = card.querySelector('.buttonDecrease');
+//     let count = card.querySelector('.card__img-count');
+//     let card__img = card.querySelector('.card__img')
 
+//     let number = 0;
 
-
-
-
-
-
-
+//     buttonIncrease.addEventListener("click", function () {
+//         card__img.style.filter = "brightness(75%)";
+//         number += 1;
+//         count.innerHTML = number;
+//     });
+//     buttonDecrease.addEventListener("click", function () {
+//         if (number > 0) {
+//             number -= 1;
+//             count.innerHTML = number;
+//         }
+//         else if (number == 0) {
+//             count.innerHTML = "";
+//             card__img.style.filter = "";
+//         }
+        //         // console.log(number) ??? убрать 0
+        //         // else {
+        //         //     return;
+        //         // }
+//     });
+// }
 
 
