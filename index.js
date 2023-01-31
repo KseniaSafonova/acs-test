@@ -337,18 +337,15 @@ function addCount(card) {
         count.innerHTML = number;
     });
     buttonDecrease.addEventListener("click", function () {
-        if (number > 0) {
+        if (number === 1) {
+            count.innerHTML = "";
+            card__img.style.filter = 'none';
+        }
+        else if (number >= 1) {
             number -= 1;
             count.innerHTML = number;
         }
-        else if (number == 0) {
-            count.innerHTML = "";
-            card__img.style.filter = "";
-        }
-        // console.log(number) ??? убрать 0
-        // else {
-        //     return;
-        // }
+
     });
 }
 
