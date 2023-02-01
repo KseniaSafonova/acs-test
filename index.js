@@ -303,6 +303,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <img src="ruble.png">
                     </div>
                     <button class="buttonIncrease">+</button>
+                    </div>
                 </div>
             </div>`
         })
@@ -310,17 +311,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let cards = document.querySelectorAll('.card')
     cards.forEach(addCount)
-
-    // <button value=${element.itemCode} class="showID">ID</button>
-
-    // let showID = document.querySelectorAll('.showID')
-    // console.log(showID)
-
-    // showID.forEach(button => {
-    //     button.addEventListener('click', function (event) {
-    //         console.log(event.target)
-    //     })
-    // })
 })
 
 function addCount(card) {
@@ -340,6 +330,7 @@ function addCount(card) {
         if (number === 1) {
             count.innerHTML = "";
             card__img.style.filter = 'none';
+            number = 0;
         }
         else if (number >= 1) {
             number -= 1;

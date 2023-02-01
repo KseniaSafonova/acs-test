@@ -1,3 +1,9 @@
+.header {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
 .main {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -68,4 +74,71 @@
   width: 30px;
   font-size: 18px;
   margin-top: 5px;
+}
+
+@media (min-width: 375px) and (max-width: 414px) {
+  .card {
+    display: grid;
+    border: 1px solid grey;
+    border-radius: 0 0 20px 20px;
+    margin-top: 20px;
+    width: 95%;
+    height: 475px;
+  }
+  .card__img {
+    z-index: 0;
+  }
+  .card__img img {
+    width: 95%;
+  }
+  .card__img-count {
+    height: 20px;
+    width: 30px;
+    position: absolute;
+    z-index: 1;
+    height: 205px;
+    width: 363px;
+    font-size: 72px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card__content {
+    margin-left: 20px;
+  }
+  .card__content-title {
+    font-weight: 700;
+    margin-top: 15px;
+  }
+  .card__content-description {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  .card__content-weight {
+    margin-top: 10px;
+  }
+  .card__content-price {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .card__content-price img {
+    margin-bottom: -5px;
+    margin-left: -10px;
+  }
+  .card__content-count {
+    margin-top: 15px;
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+  }
+  .card__content-count button {
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid grey;
+    height: 30px;
+    width: 30px;
+    font-size: 18px;
+    margin-top: 5px;
+  }
 }/*# sourceMappingURL=index.css.map */
