@@ -308,7 +308,8 @@ menuCategories[0].menuItems.map((element) => {
             </div>
             <button class="buttonIncrease">+</button>
             </div>
-            </div>`})
+            </div>
+        </div>`})
 
 menuCategories[1].menuItems.map((element) => {
     cat1.innerHTML += `
@@ -327,6 +328,7 @@ menuCategories[1].menuItems.map((element) => {
         <img src="ruble.png">
         </div>
         <button class="buttonIncrease">+</button>
+        </div>
         </div>
         </div>`})
 
@@ -348,6 +350,7 @@ menuCategories[2].menuItems.map((element) => {
         </div>
         <button class="buttonIncrease">+</button>
         </div>
+        </div>
         </div>`})
 
 menuCategories[3].menuItems.map((element) => {
@@ -367,6 +370,7 @@ menuCategories[3].menuItems.map((element) => {
         <img src="ruble.png">
         </div>
         <button class="buttonIncrease">+</button>
+        </div>
         </div>
         </div>`})
 
@@ -388,6 +392,7 @@ menuCategories[4].menuItems.map((element) => {
         </div>
         <button class="buttonIncrease">+</button>
         </div>
+        </div>
         </div>`})
 
 menuCategories[5].menuItems.map((element) => {
@@ -408,6 +413,7 @@ menuCategories[5].menuItems.map((element) => {
         </div>
         <button class="buttonIncrease">+</button>
         </div>
+        </div>
         </div>`})
 
 menuCategories[6].menuItems.map((element) => {
@@ -422,7 +428,6 @@ menuCategories[6].menuItems.map((element) => {
         <div class="card__content-description">${element.itemDescription}</div>
         <div class="card__content-weight">${element.itemWeight} гр</div>
         <div class="card__content-count">
-        <div>
         <button class="buttonDecrease">-</button>
         <div class="card__content-price">${element.itemPrice}
         <img src="ruble.png">
@@ -435,7 +440,6 @@ menuCategories[6].menuItems.map((element) => {
 
 let cards = document.querySelectorAll('.card')
 cards.forEach(addCount)
-
 
 function addCount(card) {
     let buttonIncrease = card.querySelector('.buttonIncrease');
@@ -454,6 +458,7 @@ function addCount(card) {
         if (number === 1) {
             count.innerHTML = "";
             card__img.style.filter = 'none';
+            number = 0;
         }
         else if (number >= 1) {
             number -= 1;

@@ -47,9 +47,9 @@ h2 {
   margin-top: 15px;
 }
 .card__content-description {
-  width: 350px;
   box-sizing: border-box;
   padding-left: 10px;
+  padding-right: 10px;
   margin-top: 15px;
   font-size: 14px;
 }
@@ -60,13 +60,11 @@ h2 {
   margin-top: 10px;
   margin-left: 5px;
   font-size: 20px;
+  display: flex;
 }
 .card__content-count {
   display: flex;
   justify-content: center;
-}
-.card__content-count div {
-  display: flex;
 }
 .card__content-count button {
   border-radius: 50%;
@@ -76,4 +74,21 @@ h2 {
   width: 30px;
   font-size: 18px;
   margin-top: 5px;
+}
+
+@media (min-width: 375px) and (max-width: 414px) {
+  .card {
+    width: 95%;
+    height: 450px;
+    margin-left: 10px;
+  }
+  .card__img img {
+    width: 100%;
+  }
+  .card__content-title {
+    font-size: 20px;
+  }
+  .card__content-description {
+    font-size: 18px;
+  }
 }/*# sourceMappingURL=index.css.map */
