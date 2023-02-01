@@ -79,66 +79,39 @@
 @media (min-width: 375px) and (max-width: 414px) {
   .card {
     display: grid;
-    border: 1px solid grey;
     border-radius: 0 0 20px 20px;
-    margin-top: 20px;
+    margin-left: 10px;
     width: 95%;
-    height: 475px;
-  }
-  .card__img {
-    z-index: 0;
+    height: 480px;
   }
   .card__img img {
-    width: 95%;
+    width: 100%;
   }
   .card__img-count {
-    height: 20px;
-    width: 30px;
-    position: absolute;
-    z-index: 1;
-    height: 205px;
-    width: 363px;
-    font-size: 72px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    display: block;
+    margin-left: 40%;
+    margin-top: 10%;
   }
   .card__content {
-    margin-left: 20px;
+    margin-left: 0px;
+    text-align: center;
   }
   .card__content-title {
-    font-weight: 700;
-    margin-top: 15px;
+    font-size: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .card__content-description {
-    margin-top: 15px;
-    font-size: 14px;
-  }
-  .card__content-weight {
-    margin-top: 10px;
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .card__content-price {
-    margin-top: 10px;
-    font-size: 20px;
-  }
-  .card__content-price img {
-    margin-bottom: -5px;
-    margin-left: -10px;
+    margin-left: 5px;
   }
   .card__content-count {
-    margin-top: 15px;
-    display: flex;
-    width: 150px;
-    justify-content: space-between;
-  }
-  .card__content-count button {
-    border-radius: 50%;
-    background-color: white;
-    border: 1px solid grey;
-    height: 30px;
-    width: 30px;
-    font-size: 18px;
-    margin-top: 5px;
+    width: 100%;
+    justify-content: center;
   }
 }/*# sourceMappingURL=index.css.map */
