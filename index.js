@@ -336,7 +336,6 @@ function addCount(card) {
             number -= 1;
             count.innerHTML = number;
         }
-
     });
 }
 
